@@ -8,24 +8,26 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import "@fontsource/roboto";
-import CssBaseline from "@mui/material/CssBaseline";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Roboto } from "@fontsource/roboto";
+// import CssBaseline from "@mui/material/CssBaseline";
+// import { createTheme, ThemeProvider } from "@mui/material/styles";
+// import { Roboto } from "@fontsource/roboto";
+import { BrowserRouter } from "react-router-dom";
 
-const theme = createTheme({
-  typography: {
-    fontFamily: "Roboto, Arial, sans-serif",
-  },
-});
+// const theme = createTheme({
+//   typography: {
+//     fontFamily: "Roboto, Arial, sans-serif",
+//   },
+// });
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <BrowserRouter basename="/healthysteps">
+    <App />
+  </BrowserRouter>,
+  {
+    /* </React.StrictMode> */
+  }
 );
 
 // If you want to start measuring performance in your app, pass a function
