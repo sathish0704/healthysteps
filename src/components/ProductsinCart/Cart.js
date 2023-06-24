@@ -22,7 +22,6 @@ const Cart = ({
   onUpdateQuantity,
   onClearCart,
 }) => {
-  
   // Calculate total price of items in the cart
   const getTotalPrice = () => {
     return cartItems.reduce(

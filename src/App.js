@@ -36,7 +36,7 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       <NavigationBar
         setIsCartDrawerOpen={setIsCartDrawerOpen}
         cartItemCount={cartItemCount}
@@ -78,7 +78,7 @@ function App() {
           height="40px"
         />
       </Button>
-    </>
+    </div>
   );
 }
 

@@ -365,6 +365,8 @@ const CartBox = ({
   onCartItemCountChange,
 }) => {
   const [cartItems, setCartItems] = React.useState([]);
+  const [cartEmpty, setCartEmpty] = React.useState(false);
+
 
   const handleAddToCart = (product) => {
     const existingItem = cartItems.find((item) => item.id === product.id);
@@ -379,6 +381,7 @@ const CartBox = ({
       );
     } else {
       setCartItems((prevItems) => [...prevItems, product]);
+      setCartEmpty(false); 
     }
   };
 
@@ -398,7 +401,8 @@ const CartBox = ({
 
   const handleClearCart = () => {
     setCartItems([]);
-    window.location.reload();
+    setCartEmpty(true);
+    // window.location.reload();
   };
 
   // Call the onCartItemCountChange function whenever the cartItems change
@@ -415,7 +419,7 @@ const CartBox = ({
           products={products}
           onAddToCart={handleAddToCart}
           onRemoveFromCart={handleRemoveFromCart}
-          isCartEmpty={handleClearCart}
+          checkEmpty={cartEmpty}
         />
 
         <ImagesGrid />
@@ -425,6 +429,7 @@ const CartBox = ({
           products={rice}
           onAddToCart={handleAddToCart}
           onRemoveFromCart={handleRemoveFromCart}
+          checkEmpty={cartEmpty}
         />
 
         <ImagesGrid2 />
@@ -434,6 +439,7 @@ const CartBox = ({
           products={groceries}
           onAddToCart={handleAddToCart}
           onRemoveFromCart={handleRemoveFromCart}
+          checkEmpty={cartEmpty}
         />
 
       </Container>
@@ -460,8 +466,7 @@ const CartBox = ({
           cartItems={cartItems}
           onRemoveFromCart={handleRemoveFromCart}
           onUpdateQuantity={handleUpdateQuantity}
-          onClearCart={handleClearCart}
-          addedItemsLength={cartItems.length}
+          onClearCart={handleClearCart}          
         />
       </Drawer>
     </div>

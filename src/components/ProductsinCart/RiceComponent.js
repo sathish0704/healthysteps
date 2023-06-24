@@ -4,7 +4,7 @@ import Product from "./Product";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
-const RiceComponent = ({ products, onAddToCart, onRemoveFromCart }) => {
+const RiceComponent = ({ products, onAddToCart, onRemoveFromCart,checkEmpty }) => {
   const containerRef = useRef(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
@@ -99,6 +99,7 @@ const RiceComponent = ({ products, onAddToCart, onRemoveFromCart }) => {
                 product={product}
                 onAddToCart={onAddToCart}
                 onRemoveFromCart={onRemoveFromCart}
+                isCartEmpty={checkEmpty}
               />
             </Stack>
           ))}

@@ -4,7 +4,7 @@ import Product from "./Product";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
-const GroceriesComponent = ({ products, onAddToCart, onRemoveFromCart }) => {
+const GroceriesComponent = ({ products, onAddToCart, onRemoveFromCart,checkEmpty }) => {
   // Ref to the container element
   const containerRef = useRef(null);
 
@@ -108,6 +108,7 @@ const GroceriesComponent = ({ products, onAddToCart, onRemoveFromCart }) => {
                 product={product}
                 onAddToCart={onAddToCart}
                 onRemoveFromCart={onRemoveFromCart}
+                isCartEmpty={checkEmpty}
               />
             </Stack>
           ))}
